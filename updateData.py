@@ -24,7 +24,7 @@ class dataUpdater:
         self.connection = None
         self.cursor  = None
 
-    #Connect to the database
+    # Connect to the database
     def connect(self):
         self.connection = mysql.connector.connect(
             host=self.host,
@@ -39,7 +39,7 @@ class dataUpdater:
         self.cursor.execute(sql)
         self.connection.commit()
 
-    #Fetch data from the database and display them
+    # Fetch data from the database and display them
     def fetchData(self, sql):
         self.cursor.execute(sql)
         results = self.cursor.fetchall()
@@ -47,7 +47,7 @@ class dataUpdater:
         for row in results:
             print(row)  
 
-    #Close the connection of the database
+    # Close the connection of the database
     def closeConnection(self):
         if self.cursor:
             self.cursor.close()
